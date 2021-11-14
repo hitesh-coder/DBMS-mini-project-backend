@@ -19,8 +19,10 @@ const dbURI = process.env.MONGO_URI;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true});
 
 const authRoutes = require('./routes/authRoutes');
+const profileRoutes = require('./routes/profileRoutes');
 
 app.use("/api/auth", authRoutes);
+app.use("/api/user/profile",profileRoutes)
 
 // Handle Production
 if (process.env.NODE_ENV === 'production') {
