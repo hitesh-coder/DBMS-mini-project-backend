@@ -2,7 +2,6 @@ const Profile = require('../models/userProfile')
 
 module.exports.update_user = async (req, res) => {
     const data = req.body;
-    console.log(req.body)
     try {
         const updatedProfile = await Profile.findOneAndUpdate(
             { email: data.email },
